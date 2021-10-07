@@ -6,8 +6,8 @@ public class Conta {
 	
 	private TipoConta tipo;
 	private String numero;
-	private String numeroAgencia;
-	public Cliente titular;
+	private Agencia agencia;
+	private Cliente cliente;
 	private double saldo;
 	
 	// Método construtor
@@ -25,8 +25,20 @@ public class Conta {
 		return tipo;
 	}
 	
-	public void setNumeroAgencia(String numeroAgencia) {
-		this.numeroAgencia = numeroAgencia;
+	public void setAgencia(Agencia agencia) {
+		this.agencia = agencia;
+	}
+	
+	public Agencia getAgencia() {
+		return agencia;
+	}
+	
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+	
+	public Cliente getCliente() {
+		return cliente;
 	}
 	
 	public void depositar(double valorDeposito) {
@@ -69,9 +81,10 @@ public class Conta {
 	public void exibirDetalhes() {
 		System.out.println();
 		System.out.println("---------------------");
-		System.out.printf("Titular: %s\n", titular);
+		System.out.printf("Titular: %s\n", cliente.getNome());
 		System.out.printf("Número: %s\n", numero);
-		System.out.printf("Agência: %s\n", numeroAgencia);
+		System.out.printf("Agência: %s\n", agencia.getNumeroAgencia());
+		System.out.printf("Gerente: %s\n", agencia.getNomeGerente());
 		System.out.printf("Tipo: %s\n", tipo);
 		System.out.printf("Saldo: %s\n", saldo);
 	}

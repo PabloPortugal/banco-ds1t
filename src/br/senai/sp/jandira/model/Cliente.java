@@ -14,4 +14,20 @@ public class Cliente {
 		return nome;
 	}
 	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public String getEmail() {
+		return this.email;
+	}
+	
+	public void setSalario(double salario) {
+		this.salario = salario;
+	}
+	
+	public double getSalario() {
+		return this.salario;
+	}
+	
 }
